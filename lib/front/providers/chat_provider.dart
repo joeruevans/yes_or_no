@@ -4,13 +4,14 @@ import 'package:yes_no_app/domain/entities/message.dart';
 import 'dart:io';
 class Chatprovider extends ChangeNotifier{
   final ScrollController chatScrollController= ScrollController();
-  // GetYesNoAnswer() from get_yes_no_answer.dart
+  //---GetYesNoAnswer() from get_yes_no_answer.dart
   final GetYesNoAnswer getYesNoAnswer=GetYesNoAnswer();
   List<MessageList> message=[ 
     MessageList(text: 'hi',fromwho: FromWho.me),
     /*MessageList(text: 'Ha upei',fromwho: FromWho.me),*/
   ];
   Future<void> sendmessage( String text) async{
+    // MessageList, FromWho from Message.dart
     final newMessage= MessageList(text: text, fromwho: FromWho.me);
     message.add(newMessage);
     if (text.contains('monke')){
